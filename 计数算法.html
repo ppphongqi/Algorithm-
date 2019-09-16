@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <style type="text/css"></style>
+    <script type="application/javascript"></script>
+</head>
+<body>
+
+<div class="picture">
+
+</div>
+
+<style >
+
+
+</style>
+
+<script>
+    let array = [ 11,11,10,10,9,9,9,1,14,14,13];
+    let counts = [];
+
+    for (let v of array){
+        counts[v] = (counts[v] || 0) + 1 ;
+        //待排序数组里的整数变为另一个数组的项数
+        //当数组都为正整数时，数组长度为最大值的大小
+        //统计每个项数出现在待排序数组的次数
+    }
+    console.log(counts);
+    //[empty, 1, empty × 7, 3, 2, 2, empty, 1, 2]
+
+    let result  = [];
+    for (let i = 0 ; i < counts.length; i++){
+        let count = counts[i];
+        while(count > 0){
+            result.push(i)
+            count--
+        }
+    }
+    //排序完成
+    console.log(result);
+
+    //排序负数
+    //将最小值设置为偏移量
+    let array1 = [-3,-2,-1,-3,-2,-2,0,-4];
+    let counts1 = [] , result1 = [];
+    let min = Math.min(...array1);
+    for(let v of array1){
+        counts1[v-min] = (counts1[v-min] || 0) + 1 ;
+
+    }
+    console.log(counts1)
+    for(let i = 0 ; i < counts1.length ; i++){
+        let count = counts1[i];
+        while(count > 0){
+            result1.push(i + min)
+            count--
+        }
+    }
+    console.log(result1)
+
+
+
+</script>
+
+</body>
+</html>
